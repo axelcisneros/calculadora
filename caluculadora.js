@@ -50,7 +50,7 @@ function igualar() {
        x2 = 1;
     }
 }
-function raiz () {
+function raiz() {
     x1 = Math.sqrt(x1);
     pantalla.innerHTML= x1;
     igu = "no";
@@ -63,87 +63,34 @@ function nagativo() {
     pantalla.innerHTML = x1;
 }
 function pociento() {
-    x1 = x1/100;
+    x1 = x1*(x3/100);
     pantalla.innerHTML = x1;
     igualar();
     x2 = 1;
 }
-
-const uno = document.getElementById("uno");
-const dos = document.getElementById("dos");
-const tres = document.getElementById("tres");
-const cuatro = document.getElementById("cuatro");
-const cinco = document.getElementById("cinco");
-const seis = document.getElementById("seis");
-const siete = document.getElementById("siete");
-const ocho = document.getElementById("ocho");
-const nueve = document.getElementById("nueve");
-const cero = document.getElementById("cero");
-const punto = document.getElementById("punto");
-const igual = document.getElementById("igual");
-const suma = document.getElementById("suma");
-const resta = document.getElementById("resta");
-const mult = document.getElementById("mult");
-const barra = document.getElementById("barra");
-const raizc = document.getElementById("raiz");
-const negPos = document.getElementById("negPos");
-const porcen = document.getElementById("porcen");
-
-
-uno.onclick = function() {
-    numero(1);
+function retro() {
+    cifras = x1.length;
+    br = x1.substr(cifras-1,cifras);
+    x1 = x1.substr(0,cifras-1);
+    if (x1 == "") {x1 = "0";};
+    if (br == ".") {coma = 0;};
+    pantalla.innerHTML = x1;
 }
-dos.onclick = function() {
-    numero(2);
+function correccion() {
+    pantalla.innerHTML = 0
+    x1 = 0;
+    coma = 0;
 }
-tres.onclick = function() {
-    numero(3);
+function borrado() {
+    pantalla.innerHTML = 0;
+    x1 = "0" ;
+    coma = 0;
+    x3 = 0;
+    igu = "no";
 }
-cuatro.onclick = function() {
-    numero(4);
-}
-cinco.onclick = function() {
-    numero(5);
-}
-seis.onclick = function() {
-    numero(6);
-}
-siete.onclick = function() {
-    numero(7);
-}
-ocho.onclick = function() {
-    numero(8);
-}
-nueve.onclick = function() {
-    numero(9);
-}
-cero.onclick = function() {
-    numero(0);
-}
-punto.onclick = function() {
-    numero(".");
-}
-igual.onclick = function() {
-    igualar();
-}
-suma.onclick = function() {
-    operar("+");
-}
-resta.onclick = function() {
-    operar("-");
-}
-mult.onclick = function() {
-    operar("*");
-}
-barra.onclick = function() {
-    operar("/");
-}
-raizc.onclick = function() {
-    raiz();
-}
-negPos.onclick = function() {
-    nagativo();
-}
-porcen.onclick = function() {
-    pociento();
+function exponente() {
+    x1 = Math.pow(x1, 2);
+    pantalla.innerHTML = x1;
+    igu = "no";
+    x2 = 1;
 }
